@@ -1,0 +1,5 @@
+D:\Tutorial\Angular\Garments\GarmentsAng\GarmentsAng\bin\GarmentsAng.dll
+D:\Tutorial\Angular\Garments\GarmentsAng\GarmentsAng\bin\GarmentsAng.pdb
+D:\Tutorial\Angular\Garments\GarmentsAng\GarmentsAng\obj\Debug\GarmentsAng.csprojResolveAssemblyReference.cache
+D:\Tutorial\Angular\Garments\GarmentsAng\GarmentsAng\obj\Debug\GarmentsAng.dll
+D:\Tutorial\Angular\Garments\GarmentsAng\GarmentsAng\obj\Debug\GarmentsAng.pdb

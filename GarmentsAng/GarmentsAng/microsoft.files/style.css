@@ -1,0 +1,60 @@
+ul#microsoft ul{display:none}
+ul#microsoft li:hover>*{display:block}
+ul#microsoft li:hover{position:relative;}
+ul#microsoft ul{
+	position: absolute;left:-1px;top:98%;}
+ul#microsoft ul ul{
+	position: absolute;left:98%;top:-2px;}
+ul#microsoft,ul#microsoft ul{
+	margin:0px;list-style:none;padding:0px;background-color:#FFFFFF;border-width:1px;border-style:solid;border-color:#999999;}
+ul#microsoft {
+	display:block;font-size:0;zoom:1;width:540px;float: left;}
+ul#microsoft ul{
+	width:237px;padding:0;}
+ul#microsoft li{
+	display:block;zoom:1;margin:0;font-size:0;float:left;}
+ul#microsoft a:active, ul#microsoft a:focus {outline-style:none}
+ul#microsoft a, ul#microsoft li.dis a:hover,ul#microsoft li.sep a:hover{
+	display:block;vertical-align:middle;background-color:transparent;border:0px none #FCEEB0;text-align:center;text-decoration:none;padding:10px 5px;font:normal 11px Tahoma,Verdana,Segoe,sans-serif;color: #00629D;text-decoration:none;cursor:pointer;}
+ul#microsoft span{overflow:hidden;}
+ul#microsoft ul li {float:none;}
+ul#microsoft ul a, ul#microsoft ul li.dis a:hover{
+	text-align:left;white-space:nowrap;}
+ul#microsoft li.sep{
+	text-align:left;padding:0px;line-height:0;height:100%;}
+ul#microsoft li.sep span{
+	float:none;padding-right:0;width:1px;height:42px;display:inline-block;background-color:#999999;background-image:none;}
+ul#microsoft ul li.sep span{
+	width:1px;height:2px;}
+ul#microsoft li:hover>a{
+	background-color:transparent;border-color:#4C99AB;border-style:none;font:normal 11px Tahoma,Verdana,Segoe,sans-serif;color: #00629D;text-decoration:underline;}
+ul#microsoft li.dis a{color: #AAAAAA !important;}
+ul#microsoft img{
+	border: none;vertical-align: middle;margin-right:20px;width:16px;height:16px;}
+ul#microsoft ul img{
+	width:14px;height:7px;}
+ul#microsoft img.over{display:none}
+ul#microsoft li.dis a:hover img.over{display:none !important}
+ul#microsoft li.dis a:hover img.def {display:inline !important}
+ul#microsoft li:hover > a img.def  {display:none}
+ul#microsoft li:hover > a img.over {display:inline}
+ul#microsoft li.istylei0>a{
+	height:22px;background-color:#DBDBDB;background-image:url(back.gif);font:normal 11px Tahoma,Verdana,Segoe,sans-serif;color:#000000;text-decoration:none;}
+ul#microsoft li.istylei0:hover>a{
+	background-color:#FFFFFF;background-image:url(blank.gif);font:normal 11px Tahoma,Verdana,Segoe,sans-serif;color:#000000;text-decoration:underline;}
+ul#microsoft li.istylei1>a{
+	background-image:url(blank.gif);font:bold 11px Tahoma,Verdana,Segoe,sans-serif;color:#000000;text-decoration:none;}
+ul#microsoft li.istylei1:hover>a{
+	background-image:url(blank.gif);font:bold 11px Tahoma,Verdana,Segoe,sans-serif;color:#000000;text-decoration:none;}
+ ul.istylem0 {
+	width:400px;background-color:#FFFFFF;background-image:microsoft.files/sub_back.gif;border-width:1px;border-style:solid;border-color:#444444;}
+ ul.istylem0>li>a {
+	padding:0px 5px;}
+ ul.istylem1 {
+	width:600px;background-color:#FFFFFF;background-image:microsoft.files/sub_back.gif;border-width:1px;border-style:solid;border-color:#444444;}
+ ul.istylem1>li>a {
+	padding:0px 5px;}
+ ul.istylem2 {
+	width:200px;background-color:#FFFFFF;background-image:microsoft.files/sub_back.gif;border-width:1px;border-style:solid;border-color:#444444;}
+ ul.istylem2>li>a {
+	padding:0px 5px;}

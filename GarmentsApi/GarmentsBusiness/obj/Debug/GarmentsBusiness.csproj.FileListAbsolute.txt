@@ -1,0 +1,5 @@
+D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsBusiness\bin\Debug\GarmentsBusiness.dll
+D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsBusiness\bin\Debug\GarmentsBusiness.pdb
+D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsBusiness\obj\Debug\GarmentsBusiness.csprojResolveAssemblyReference.cache
+D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsBusiness\obj\Debug\GarmentsBusiness.dll
+D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsBusiness\obj\Debug\GarmentsBusiness.pdb

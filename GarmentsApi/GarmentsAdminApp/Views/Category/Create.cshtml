@@ -1,0 +1,134 @@
+﻿@model GarmentsData.Category
+
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Category</legend>
+
+        <table  class ="tableCat" >
+            <tr>
+                <td >
+                    @Html.Label("Category Name")
+                </td>
+                <td >
+                     @Html.TextBoxFor(model => model.Name, new {  @class = "text1" })
+            @Html.ValidationMessageFor(model => model.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Parent Category")
+                </td>
+                <td >
+                     
+            @Html.DropDownListFor(model => model.ParentCatId, new SelectList (ViewBag.MainCategory, "Value","Text"), "Main Category", new { @class="text1",  @id="MainCategory"} )
+            @Html.ValidationMessageFor(model => model.CategoryId)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+ @Html.DropDownListFor(model => model.ParentCatId,new SelectList (string.Empty, "Value","Text"), "Sub Category", new { @class="text1" , @id="SubCategory" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan ="2" class ="catSubmit" >
+                     <input type="submit" value="Create" />
+                </td>
+            </tr>
+        </table>
+
+        <div>
+             @*@{Html.RenderPartial("IndexPartial", );}*@
+            @{Html.RenderAction("IndexPartial", "Category");}
+        </div>
+        @*<div class="editor-label">
+            
+            @Html.Label("Category Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            
+            @Html.Label("Parent Category")
+        </div>
+        <div class="editor-field">
+            
+            
+            @Html.DropDownListFor(model => model.ParentCatId, new SelectList (ViewBag.MainCategory, "Value","Text"), "Main Category", new { style = "width:300px; height:30px",  @id="MainCategory"} )
+            @Html.ValidationMessageFor(model => model.CategoryId)
+        </div>
+        
+        @Html.DropDownListFor(model => model.ParentCatId,new SelectList (string.Empty, "Value","Text"), "Sub Category", new { style = "width:300px; height:30px" , @id="SubCategory" })
+        <p>
+            <input type="submit" value="Create" />
+        </p>*@
+    </fieldset>
+}
+
+<div>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+
+    $("#SubCategory").change(function () {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("GetSubCategoriesId")',
+            dataType: 'json',
+            data: { parentCatId: $("#SubCategory").val() },
+            success: function (subcategories) {
+                //$.each(subcategories, function (i, subcategory) {
+                //    $("#SubCategory").append('<option value="'
+                //        + subcategory.Value + '">' +
+                //        subcategory.Text + '</option>');
+                //});
+            },
+            error: function (ex) {
+                alert('Failed to retrieve Sub Categories : ' + ex);
+            }
+        });
+        return false;
+    })
+
+    $("#MainCategory").change(function () {
+        $("#SubCategory").empty();
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("GetSubCategories")',
+            dataType: 'json',
+            data: { parentCatId: $("#MainCategory").val() },
+            success: function (subcategories) {
+                $.each(subcategories, function (i, subcategory) {
+                    $("#SubCategory").append('<option value="'
+                        + subcategory.Value + '">' +
+                        subcategory.Text + '</option>');
+                });
+            },
+            error: function (ex) {
+                alert('Failed to retrieve Sub Categories : ' + ex);
+            }
+        });
+         return false;
+     })
+    
+});
+</script>

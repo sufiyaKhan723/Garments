@@ -1,0 +1,106 @@
+﻿ <div >
+<!--<h1></h1>
+<div>{{message}}</div>-->
+<!--<div >
+    <hr />
+    <a href="#/mens" ng-model="collapsed" ng-click="collapsed=!collapsed">Click here to <strong>Toggle (show/hide)</strong> description</a>
+
+    <div ng-show="collapsed">I am description for the above title, which was collapsed by default</div>
+    <hr />
+    
+    <a href="/mens" ng-model="expandme" ng-click="expandme=true">Click here to <strong>SHOW</strong> description</a>
+
+    <div ng-show="expandme">I am description for the above title, which was collapsed by default</div>
+    <hr />
+    
+    <a href="#" ng-model="collapseme" ng-click="collapseme=true">Click here to <strong>HIDE</strong> description</a>
+
+    <div ng-hide="collapseme">I am description for the above title, which was collapsed by default</div>
+    <hr /><label for="chklabl"><input type="checkbox" ng-model="checked" name="chklabl" id="chklabl"> Check this checkbox to show/hide this example is from AngularJS API Reference</label><br/>
+Show: <span ng-show="checked">I show up when your checkbox is checked.</span> <br/>
+Hide: <span ng-hide="checked">I hide when your checkbox is checked.</span>
+    <hr />
+</div>-->
+      
+<div class="container">
+    <div class="row">
+        <testdirective></testdirective>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-md-4 sidenavi" >
+
+            <ul class="nav nav-pills nav-stacked andrews">
+                <li class="nav-header"> <a href="#/Category" ng-model="collapsed" ng-click="collapsed=!collapsed">
+    By Categories <i class="glyphicon glyphicon-chevron-down"></i>
+  </a>
+                     
+                    <ul  id="apmenu0"  ng-show="collapsed" >
+            <li ng-repeat="smenu in category.submenu">
+                <!--<a>{{submenu.length}} hi</a>-->
+              <a href="{{smenu.action}}"  >{{smenu.title}} </a>
+            </li>
+             
+          </ul>
+
+                    <ul  id="apmenu0"  ng-show="collapsed">
+
+                        <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+                        </li>
+                        <li><a href="#/Category"><i class="glyphicon glyphicon-envelope"></i> Messages <span class="badge badge-success">4</span></a>
+                        </li>
+                        <li><a href="#/Category"><i class="glyphicon glyphicon-cog"></i> Settings</a>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-comment"></i> Shoutbox</a>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-user"></i> Staff List</a>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-flag"></i> Options</a>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-exclamation-sign"></i> Rules &amp; Regulations</a>
+                        </li>
+                        <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header"> <a href="#/mens" data-toggle="collapse" data-target="#apmenu">
+    Section <i class="glyphicon glyphicon-chevron-up"></i>
+  </a>
+
+                    <ul class="collapse" id="apmenu">
+                        <li><a href="#">Information &amp; Stats</a>
+                        </li>
+                        <li><a href="#">Option</a>
+                        </li>
+                        <li><a href="#">Option</a>
+                        </li>
+                        <li><a href="#">Option</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header">
+<a href="#/mens" data-toggle="collapse" data-target="#apmenu2">
+    Settings <i class="glyphicon glyphicon-chevron-up"></i>
+  </a>
+
+                    <ul style="list-style: none;" class="collapse" id="apmenu2">
+                        <li><a href="#"><i class="icon-"></i>option</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <img src="../Images/TShirts/shirt1.jpg"  class ="imgClass"/>
+            <img src="../Images/TShirts/shirt2.jpg" class ="imgClass"/>
+            <img src="../Images/TShirts/shirt3.jpg"  class ="imgClass" />
+            <img src="../Images/TShirts/shirt1.jpg"  class ="imgClass"/>
+            <img src="../Images/TShirts/shirt2.jpg" class ="imgClass"/>
+            <img src="../Images/TShirts/shirt3.jpg"  class ="imgClass" />
+            <img src="../Images/TShirts/shirt1.jpg"  class ="imgClass"/>
+            <img src="../Images/TShirts/shirt2.jpg" class ="imgClass"/>
+            <img src="../Images/TShirts/shirt3.jpg"  class ="imgClass" />
+        </div>
+    </div>
+</div>
+
+     </div>
