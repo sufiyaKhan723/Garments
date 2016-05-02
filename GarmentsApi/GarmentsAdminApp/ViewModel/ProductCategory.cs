@@ -1,14 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using GarmentsData;
-
 namespace GarmentsAdminApp.ViewModel {
     public class ProductCategory {
         public Product product { get; set; }
         //public Category category { get; set; }
     }
+
+    public class ProductViewModel {
+
+        public Product product { get; set; }
+        public Nullable<int> ParentCatId { get; set; }
+    }
+
     public class CategoryModel {
         // public Category category { get; set; }
         //public GarmentsEntities _category = new GarmentsEntities();

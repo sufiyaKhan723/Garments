@@ -1,19 +1,22 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
+using GarmentsAdminApp.Models;
+using GarmentsAdminApp.ViewModel;
 using GarmentsData;
-
 namespace GarmentsAdminApp.Controllers {
     public class ProductController : Controller {
         private GarmentsEntities db = new GarmentsEntities();
-
+        private Categories cat = new Categories();
         //
         // GET: /Product/
 
         public ActionResult Index() {
             var products = db.Products.Include(p => p.Category);
-
             return View(products.ToList());
         }
 
@@ -32,24 +35,41 @@ namespace GarmentsAdminApp.Controllers {
         // GET: /Product/Create
 
         public ActionResult Create() {
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
+            ViewBag.MainCategoryId = new SelectList(cat.MainCategories(), "CategoryId", "Name");
+            ViewBag.SubCategoryId = new SelectList("SubCategory", "", "");
             return View();
         }
 
+        public JsonResult GetSubCategories(string parentCatId) {
+            List<SelectListItem> subCategories = new List<SelectListItem>();
+            subCategories.Add(new SelectListItem { Text = "Select", Value = "0" });
+            int catId = Convert.ToInt32(parentCatId);
+            db.Categories.ToList().Where(id => id.ParentCatId == catId).ToList().ForEach(u => subCategories.Add(new SelectListItem { Text = u.Name, Value = u.CategoryId.ToString() }));
+            ViewBag.SubCategoryId = subCategories;
+            return Json(subCategories);
+        }
+        public Product GetSubCategoriesID(Product product, string CategoryId) {
+            // product.CategoryId = CategoryId != null ? Convert.ToInt32(CategoryId) : (int?)null;
+            return product;
+        }
         //
         // POST: /Product/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product product) {
+        public ActionResult Create(ProductViewModel productView, HttpPostedFileBase file) {
             if (ModelState.IsValid) {
-                db.Products.Add(product);
+                if (file != null) {
+                    file.SaveAs(HttpContext.Server.MapPath("~/Images/") + file.FileName);
+                    productView.product.Image = file.FileName;
+                }
+                db.Products.Add(productView.product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", product.CategoryId);
-            return View(product);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", productView.product.CategoryId);
+            return View(productView.product);
         }
 
         //
@@ -69,14 +89,14 @@ namespace GarmentsAdminApp.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product product) {
+        public ActionResult Edit(ProductViewModel productView) {
             if (ModelState.IsValid) {
-                db.Entry(product).State = EntityState.Modified;
+                db.Entry(productView.product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", product.CategoryId);
-            return View(product);
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", productView.product.CategoryId);
+            return View(productView.product);
         }
 
         //

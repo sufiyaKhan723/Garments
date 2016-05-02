@@ -6,12 +6,13 @@
 
 body {
     background-color: #fff;
-    border-top: solid 10px #000;
+    border-top: solid 1px #000;
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+    
 }
 
 a {
@@ -50,13 +51,13 @@ mark {
     float: right;
 }
 
-.clear-fix:after {
+/*.clear-fix:after {
     content: ".";
     clear: both;
     display: block;
     height: 0;
     visibility: hidden;
-}
+}*/
 
 h1, h2, h3,
 h4, h5, h6 {
@@ -101,7 +102,8 @@ h5, h6 {
 #body {
     background-color: #efeeef;
     clear: both;
-    padding-bottom: 35px;
+    padding-bottom: 20px;
+    
 }
 
     .main-content {
@@ -129,15 +131,16 @@ footer {
 /* site title
 ----------------------------------------------------------*/
 .site-title {
-    color: #c8c8c8;
-    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
-    font-size: 2.3em;
+    color: #292589;
+    font-family: Jokerman,Calibri,Consolas,"Courier New", Courier, monospace;
+    font-size: 2.6em;
     margin: 0;
+    padding-left :20em;
 }
 
 .site-title a, .site-title a:hover, .site-title a:active {
     background: none;
-    color: #c8c8c8;
+    color: #292589;
     outline: none;
     text-decoration: none;
 }
@@ -213,8 +216,9 @@ ul#menu {
 }
 
     .featured .content-wrapper {
-        background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        /*background-color: #7ac0da;*/
+        background-color: #ffffff;
+        background-image: -ms-linear-gradient(left, #7ac0d4 0%, #a4d4e9 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
@@ -585,7 +589,10 @@ td {
 tr.pager td {
     padding: 0 0.25em 0 0;
 }
-
+.heading1 {
+        width :100% ;  
+        border-bottom :5px double black;
+    }
 
 /********************
 *   Mobile Styles   *
@@ -735,7 +742,7 @@ tr.pager td {
         float: none;
         width: auto;
     }
-
+  
 
     /* footer
     ----------------------------------------------------------*/

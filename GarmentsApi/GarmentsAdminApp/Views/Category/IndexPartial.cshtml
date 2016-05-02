@@ -13,6 +13,7 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
+             
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ParentCatId)
@@ -24,14 +25,16 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
+            @Html.Hidden(item.CategoryId.ToString ());
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ParentCatId)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit",null, new { id=item.CategoryId  , @class = "btn glyphicon glyphicon-pencil"}) |
-            @Html.ActionLink("Details", "Details",null , new { id=item.CategoryId , @class="btn btn-info"}) |
-            @Html.ActionLink("Delete", "Delete", null, new { id=item.CategoryId, @class="glyphicon glyphicon-trash" })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId  , @class = "btn glyphicon glyphicon-pencil"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.CategoryId , @class="btn btn-info"}) |
+            @Html.ActionLink("Delete", "Delete",  new { id=item.CategoryId, @class="glyphicon glyphicon-trash" })
         </td>
     </tr>
 }

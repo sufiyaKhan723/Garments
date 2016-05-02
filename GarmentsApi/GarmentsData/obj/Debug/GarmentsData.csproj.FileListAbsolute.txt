@@ -5,3 +5,4 @@ D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsData\obj\Debug\GarmentsData.pdb
 D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsData\bin\Debug\GarmentsData.dll.config
 D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsData\bin\Debug\EntityFramework.dll
 D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsData\bin\Debug\EntityFramework.xml
+D:\Tutorial\Angular\Garments\GarmentsApi\GarmentsData\obj\Debug\GarmentsData.csprojResolveAssemblyReference.cache

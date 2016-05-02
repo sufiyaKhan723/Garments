@@ -65,7 +65,7 @@ namespace GarmentsAdminApp.Controllers {
             if (ModelState.IsValid) {
                 db.Categories.Add(category);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
             return View(category);
         }
@@ -95,7 +95,7 @@ namespace GarmentsAdminApp.Controllers {
             if (ModelState.IsValid) {
                 db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
             return View(category);
         }
@@ -120,7 +120,7 @@ namespace GarmentsAdminApp.Controllers {
             Category category = db.Categories.Find(id);
             db.Categories.Remove(category);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Create");
         }
 
         protected override void Dispose(bool disposing) {
